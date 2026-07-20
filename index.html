@@ -3,601 +3,316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>محمد یوسف زارع | Mohammad Yousefzare</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;900&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Vazirmatn', sans-serif;
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-            min-height: 100vh;
-            color: #fff;
-            overflow-x: hidden;
-        }
-
-        /* استایل پس‌زمینه متحرک */
-        .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .bg-animation span {
-            position: absolute;
-            display: block;
-            width: 20px;
-            height: 20px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 50%;
-            animation: float 25s infinite;
-            bottom: -150px;
-        }
-
-        .bg-animation span:nth-child(1) { left: 10%; width: 80px; height: 80px; animation-delay: 0s; animation-duration: 18s; }
-        .bg-animation span:nth-child(2) { left: 20%; width: 40px; height: 40px; animation-delay: 2s; animation-duration: 20s; }
-        .bg-animation span:nth-child(3) { left: 25%; width: 100px; height: 100px; animation-delay: 4s; animation-duration: 22s; }
-        .bg-animation span:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 25s; }
-        .bg-animation span:nth-child(5) { left: 55%; width: 50px; height: 50px; animation-delay: 3s; animation-duration: 19s; }
-        .bg-animation span:nth-child(6) { left: 70%; width: 90px; height: 90px; animation-delay: 5s; animation-duration: 21s; }
-        .bg-animation span:nth-child(7) { left: 85%; width: 70px; height: 70px; animation-delay: 1s; animation-duration: 23s; }
-
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); opacity: 0.5; }
-            100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; }
-        }
-
-        /* هدر و نویگیشن */
-        header {
-            padding: 20px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            backdrop-filter: blur(10px);
-            background: rgba(255,255,255,0.03);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 900;
-            background: linear-gradient(45deg, #f093fb, #f5576c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-decoration: none;
-        }
-
-        nav a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            margin-left: 25px;
-            font-weight: 400;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(45deg, #f093fb, #f5576c);
-            transition: width 0.3s;
-        }
-
-        nav a:hover {
-            color: #fff;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* بخش معرفی */
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 5%;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero .greeting {
-            font-size: 1.1rem;
-            font-weight: 300;
-            color: rgba(255,255,255,0.6);
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin-bottom: 15px;
-            line-height: 1.2;
-        }
-
-        .hero h1 .highlight {
-            background: linear-gradient(45deg, #f093fb, #f5576c, #4facfe);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero .subtitle {
-            font-size: 1.2rem;
-            color: rgba(255,255,255,0.7);
-            font-weight: 300;
-            margin-bottom: 30px;
-            line-height: 1.8;
-        }
-
-        .hero .typing {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #4facfe;
-            margin-bottom: 40px;
-        }
-
-        .hero .typing span {
-            border-left: 3px solid #4facfe;
-            padding-left: 5px;
-            animation: blink 0.8s infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { border-color: #4facfe; }
-            50% { border-color: transparent; }
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 14px 35px;
-            border-radius: 50px;
-            font-family: 'Vazirmatn';
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            border: none;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: linear-gradient(45deg, #f093fb, #f5576c);
-            color: #fff;
-            box-shadow: 0 10px 30px rgba(245,87,108,0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(245,87,108,0.5);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: #fff;
-            border: 2px solid rgba(255,255,255,0.3);
-        }
-
-        .btn-secondary:hover {
-            border-color: #4facfe;
-            background: rgba(79,172,254,0.1);
-            transform: translateY(-3px);
-        }
-
-        /* بخش درباره من */
-        .section {
-            padding: 100px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 50px;
-            text-align: center;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(45deg, #f093fb, #f5576c);
-            margin: 15px auto 0;
-            border-radius: 2px;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-image {
-            text-align: center;
-        }
-
-        .about-image .avatar {
-            width: 300px;
-            height: 300px;
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            background: linear-gradient(45deg, #f093fb, #4facfe);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-            animation: morph 8s ease-in-out infinite;
-            box-shadow: 0 20px 60px rgba(79,172,254,0.3);
-        }
-
-        .about-image .avatar span {
-            font-size: 5rem;
-        }
-
-        @keyframes morph {
-            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-            25% { border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%; }
-            50% { border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%; }
-            75% { border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%; }
-            100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
-        }
-
-        .about-text p {
-            font-size: 1.1rem;
-            line-height: 2;
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 20px;
-        }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .stat {
-            text-align: center;
-            padding: 20px;
-            background: rgba(255,255,255,0.03);
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.3s;
-        }
-
-        .stat:hover {
-            background: rgba(255,255,255,0.08);
-            transform: translateY(-5px);
-        }
-
-        .stat .number {
-            font-size: 2rem;
-            font-weight: 900;
-            background: linear-gradient(45deg, #f093fb, #f5576c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .stat .label {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.6);
-            margin-top: 5px;
-        }
-
-        /* مهارت‌ها */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .skill-card {
-            background: rgba(255,255,255,0.03);
-            border-radius: 20px;
-            padding: 30px;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.4s;
-            text-align: center;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(79,172,254,0.3);
-            box-shadow: 0 20px 60px rgba(79,172,254,0.1);
-        }
-
-        .skill-card .icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .skill-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-
-        .skill-card p {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .skill-bar {
-            margin-top: 20px;
-            height: 6px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 3px;
-            overflow: hidden;
-        }
-
-        .skill-bar .fill {
-            height: 100%;
-            border-radius: 3px;
-            background: linear-gradient(45deg, #f093fb, #f5576c);
-            width: 0;
-            transition: width 1.5s ease;
-        }
-
-        /* نمونه کارها */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .project-card {
-            background: rgba(255,255,255,0.03);
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.4s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            border-color: rgba(79,172,254,0.3);
-        }
-
-        .project-card .project-image {
-            height: 220px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: rgba(255,255,255,0.3);
-        }
-
-        .project-card .project-info {
-            padding: 25px;
-        }
-
-        .project-card .project-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-
-        .project-card .project-info p {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 15px;
-        }
-
-        .project-tag {
-            display: inline-block;
-            padding: 5px 12px;
-            background: rgba(79,172,254,0.15);
-            color: #4facfe;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin: 3px;
-        }
-
-        /* ارتباط با من */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: rgba(255,255,255,0.03);
-            padding: 50px;
-            border-radius: 30px;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 15px 20px;
-            margin-bottom: 20px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 15px;
-            color: #fff;
-            font-family: 'Vazirmatn';
-            font-size: 1rem;
-            outline: none;
-            transition: all 0.3s;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border-color: #4facfe;
-            background: rgba(79,172,254,0.05);
-        }
-
-        .contact-form textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .contact-form button {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 15px;
-            background: linear-gradient(45deg, #f093fb, #f5576c);
-            color: #fff;
-            font-family: 'Vazirmatn';
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .contact-form button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(245,87,108,0.4);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .social-links a {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            text-decoration: none;
-            color: rgba(255,255,255,0.7);
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background: linear-gradient(45deg, #f093fb, #f5576c);
-            border-color: transparent;
-            color: #fff;
-            transform: translateY(-5px);
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 5%;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            color: rgba(255,255,255,0.4);
-            font-size: 0.9rem;
-        }
-
-        footer .heart {
-            color: #f5576c;
-        }
-
-        /* رسپانسیو */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .about-grid { grid-template-columns: 1fr; }
-            .about-stats { grid-template-columns: 1fr; }
-            header { flex-direction: column; gap: 15px; }
-            nav a { margin: 0 10px; font-size: 0.85rem; }
-            .contact-form { padding: 30px 20px; }
-            .projects-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    <title>MoboMind - مرجع تخصصی اندروید و آیفون</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- پس‌زمینه متحرک -->
-    <div class="bg-animation">
-        <span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-    </div>
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <div class="container header__inner">
+            <div class="logo">
+                <div class="logo__icon">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <span class="logo__text">Mobo<span class="logo__highlight">Mind</span></span>
+            </div>
 
-    <!-- هدر -->
-    <header>
-        <a href="#" class="logo">✦ MYZ</a>
-        <nav>
-            <a href="#home">خانه</a>
-            <a href="#about">درباره من</a>
-            <a href="#skills">مهارت‌ها</a>
-            <a href="#projects">نمونه کارها</a>
-            <a href="#contact">تماس</a>
-        </nav>
+            <nav class="nav" id="nav">
+                <ul class="nav__list">
+                    <li><a href="#home" class="nav__link active" data-en="Home" data-fa="صفحه اصلی">صفحه اصلی</a></li>
+                    <li><a href="#about" class="nav__link" data-en="About" data-fa="درباره ما">درباره ما</a></li>
+                    <li><a href="#contact" class="nav__link" data-en="Contact" data-fa="تماس با ما">تماس با ما</a></li>
+                    <li><a href="#rules" class="nav__link" data-en="Rules" data-fa="قوانین و مقررات">قوانین و مقررات</a></li>
+                    <li><a href="#privacy" class="nav__link" data-en="Privacy" data-fa="حریم خصوصی">حریم خصوصی</a></li>
+                    <li><a href="#faq" class="nav__link" data-en="FAQ" data-fa="سوالات متداول">سوالات متداول</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__left">
+                <div class="lang-switch" id="langSwitch">
+                    <span class="lang-switch__option active" data-lang="fa">FA</span>
+                    <span class="lang-switch__divider">|</span>
+                    <span class="lang-switch__option" data-lang="en">EN</span>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="منو">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
     </header>
 
-    <!-- بخش معرفی -->
+    <!-- ===== HERO ===== -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <p class="greeting">✦ به سایت شخصی من خوش آمدید</p>
-            <h1>سلام! من <span class="highlight">محمد یوسف زارع</span> هستم</h1>
-            <p class="subtitle">
-                برنامه‌نویس، طراح وب و عاشق تکنولوژی 🚀<br>
-                با من همراه باش تا دنیای دیجیتال رو قشنگ‌تر کنیم
-            </p>
-            <div class="typing">
-                <span>💻 عاشق کدنویسی و خلاقیت</span>
+        <div class="container hero__inner">
+            <div class="hero__content">
+                <span class="hero__badge" data-en="🚀 Your Tech Hub" data-fa="🚀 مرجع تخصصی شما">🚀 مرجع تخصصی شما</span>
+                <h1 class="hero__title" data-en="Welcome to <span>MoboMind</span>" data-fa="به <span>MoboMind</span> خوش آمدید">به <span>MoboMind</span> خوش آمدید</h1>
+                <p class="hero__subtitle" data-en="Your specialized reference for Android & iPhone software and hardware" data-fa="مرجع تخصصی نرم‌افزار و سخت‌افزار سیستم‌عامل اندروید و آیفون">مرجع تخصصی نرم‌افزار و سخت‌افزار سیستم‌عامل اندروید و آیفون</p>
+                <p class="hero__soon" data-en="Our products will be added soon. Stay tuned! 🎯" data-fa="به زودی محصولات ما اضافه خواهند شد. همراه ما باشید! 🎯">به زودی محصولات ما اضافه خواهند شد. همراه ما باشید! 🎯</p>
+                <div class="hero__buttons">
+                    <a href="#services" class="btn btn--primary" data-en="Our Services" data-fa="خدمات ما">خدمات ما</a>
+                    <a href="#contact" class="btn btn--outline" data-en="Contact Us" data-fa="تماس با ما">تماس با ما</a>
+                </div>
             </div>
-            <div class="btn-group">
-                <a href="#projects" class="btn btn-primary">مشاهده نمونه کارها</a>
-                <a href="#contact" class="btn btn-secondary">ارتباط با من</a>
+            <div class="hero__image">
+                <div class="hero__shape"></div>
+                <div class="hero__phone">
+                    <i class="fas fa-mobile-screen-button"></i>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- درباره من -->
-    <section class="section" id="about">
-        <h2 class="section-title">درباره من</h2>
-        <div class="about-grid">
-            <div class="about-image">
-                <div class="avatar">
-                    <span>🧑‍💻</span>
+    <!-- ===== SERVICES ===== -->
+    <section class="services section" id="services">
+        <div class="container">
+            <div class="section__header">
+                <span class="section__tag" data-en="✨ What We Offer" data-fa="✨ آنچه ارائه می‌دهیم">✨ آنچه ارائه می‌دهیم</span>
+                <h2 class="section__title" data-en="Our <span>Services</span>" data-fa="<span>خدمات</span> ما"><span>خدمات</span> ما</h2>
+            </div>
+            <div class="services__grid">
+                <div class="service-card">
+                    <div class="service-card__icon" style="background: rgba(46,204,113,0.15); color: var(--green);">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="service-card__title" data-en="Fast Delivery" data-fa="ارسال سریع">ارسال سریع</h3>
+                    <p class="service-card__desc" data-en="Receive your order in the shortest possible time" data-fa="سفارش خود را در کوتاه‌ترین زمان ممکن دریافت کنید">سفارش خود را در کوتاه‌ترین زمان ممکن دریافت کنید</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon" style="background: rgba(52,152,219,0.15); color: var(--blue);">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3 class="service-card__title" data-en="Genuine Warranty" data-fa="ضمانت اصالت کالا">ضمانت اصالت کالا</h3>
+                    <p class="service-card__desc" data-en="100% original products with warranty" data-fa="محصولات ۱۰۰٪ اورجینال با ضمانت">محصولات ۱۰۰٪ اورجینال با ضمانت</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon" style="background: rgba(241,196,15,0.15); color: var(--yellow);">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="service-card__title" data-en="Online Support" data-fa="پشتیبانی آنلاین">پشتیبانی آنلاین</h3>
+                    <p class="service-card__desc" data-en="24/7 online support to answer your questions" data-fa="پشتیبانی آنلاین ۲۴ ساعته برای پاسخ به سوالات شما">پشتیبانی آنلاین ۲۴ ساعته برای پاسخ به سوالات شما</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon" style="background: rgba(46,204,113,0.15); color: var(--green);">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="service-card__title" data-en="Secure Payment" data-fa="پرداخت امن">پرداخت امن</h3>
+                    <p class="service-card__desc" data-en="Secure online payment with encryption" data-fa="پرداخت آنلاین امن با رمزنگاری پیشرفته">پرداخت آنلاین امن با رمزنگاری پیشرفته</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon" style="background: rgba(52,152,219,0.15); color: var(--blue);">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3 class="service-card__title" data-en="In-Store Purchase" data-fa="امکان خرید حضوری">امکان خرید حضوری</h3>
+                    <p class="service-card__desc" data-en="Visit our store and shop in person" data-fa="از فروشگاه ما بازدید کنید و حضوری خرید کنید">از فروشگاه ما بازدید کنید و حضوری خرید کنید</p>
+                </div>
+                <div class="service-card service-card--highlight">
+                    <div class="service-card__icon" style="background: rgba(231,76,60,0.15); color: var(--orange);">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3 class="service-card__title" data-en="Special Discounts" data-fa="تخفیف‌های ویژه">تخفیف‌های ویژه</h3>
+                    <p class="service-card__desc" data-en="Amazing discounts and offers for you" data-fa="تخفیف‌ها و پیشنهادهای شگفت‌انگیز برای شما">تخفیف‌ها و پیشنهادهای شگفت‌انگیز برای شما</p>
                 </div>
             </div>
-            <div class="about-text">
-                <p>
-                    من محمد یوسف زارع هستم، یک برنامه‌نویس و طراح وب با اشتیاق فراوان به خلق تجربه‌های دیجیتال زیبا و کاربردی. از روزی که اولین خط کد رو نوشتم، عاشق این شدم که با استفاده از تکنولوژی، ایده‌ها رو به واقعیت تبدیل کنم.
-                </p>
-                <p>
-                    تخصص اصلی من در طراحی و توسعه وب‌سایت‌های مدرن، اپلیکیشن‌های تحت وب و بهینه‌سازی تجربه کاربری هست. من به یادگیری مداوم و به‌روز بودن با جدیدترین تکنولوژی‌ها اعتقاد دارم.
-                </p>
-                <div class="about-stats">
-                    <div class="stat">
-                        <div class="number">+۲</div>
-                        <div class="label">سال تجربه</div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="about__inner">
+                <div class="about__image">
+                    <div class="about__shape"></div>
+                    <i class="fas fa-people-group about__icon"></i>
+                </div>
+                <div class="about__content">
+                    <span class="section__tag" data-en="💡 Who We Are" data-fa="💡 ما کیستیم">💡 ما کیستیم</span>
+                    <h2 class="section__title" data-en="About <span>MoboMind</span>" data-fa="درباره <span>MoboMind</span>">درباره <span>MoboMind</span></h2>
+                    <p class="about__text" data-en="MoboMind is your specialized reference in the world of Android and iPhone. We provide the latest software solutions, hardware components, and expert guidance to help you get the most out of your device." data-fa="MoboMind مرجع تخصصی شما در دنیای اندروید و آیفون است. ما جدیدترین راه‌حل‌های نرم‌افزاری، قطعات سخت‌افزاری و راهنمایی‌های تخصصی را برای استفاده بهینه از دستگاه شما ارائه می‌دهیم.">MoboMind مرجع تخصصی شما در دنیای اندروید و آیفون است. ما جدیدترین راه‌حل‌های نرم‌افزاری، قطعات سخت‌افزاری و راهنمایی‌های تخصصی را برای استفاده بهینه از دستگاه شما ارائه می‌دهیم.</p>
+                    <div class="about__stats">
+                        <div class="stat">
+                            <span class="stat__num">100+</span>
+                            <span class="stat__label" data-en="Products" data-fa="محصولات">محصولات</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat__num">500+</span>
+                            <span class="stat__label" data-en="Happy Customers" data-fa="مشتریان راضی">مشتریان راضی</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat__num">24/7</span>
+                            <span class="stat__label" data-en="Support" data-fa="پشتیبانی">پشتیبانی</span>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <div class="number">+۱۵</div>
-                        <div class="label">پروژه موفق</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WORKING HOURS ===== -->
+    <section class="hours section" style="background: var(--gray-light);">
+        <div class="container">
+            <div class="hours__card">
+                <i class="fas fa-clock hours__icon"></i>
+                <h3 data-en="Working Hours" data-fa="ساعت کاری">ساعت کاری</h3>
+                <p data-en="Saturday to Thursday: 9 AM – 9 PM" data-fa="شنبه تا پنجشنبه: ۹ صبح تا ۹ شب">شنبه تا پنجشنبه: ۹ صبح تا ۹ شب</p>
+                <p class="hours__closed" data-en="❌ Friday: Closed" data-fa="❌ جمعه: تعطیل">❌ جمعه: تعطیل</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="section__header">
+                <span class="section__tag" data-en="📬 Get In Touch" data-fa="📬 با ما در تماس باشید">📬 با ما در تماس باشید</span>
+                <h2 class="section__title" data-en="<span>Contact</span> Us" data-fa="<span>تماس</span> با ما"><span>تماس</span> با ما</h2>
+            </div>
+            <div class="contact__inner">
+                <div class="contact__info">
+                    <div class="contact__item">
+                        <i class="fas fa-envelope" style="color: var(--blue);"></i>
+                        <div>
+                            <strong data-en="Email" data-fa="ایمیل">ایمیل</strong>
+                            <a href="mailto:MoboMind@gmail.com">MoboMind@gmail.com</a>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <div class="number">+
+                    <div class="contact__item">
+                        <i class="fab fa-instagram" style="color: var(--orange);"></i>
+                        <div>
+                            <strong data-en="Instagram" data-fa="اینستاگرام">اینستاگرام</strong>
+                            <a href="https://www.instagram.com/mobomind?igsh=MWRwNjY5ZjFuOTlqdQ==" target="_blank">@mobomind</a>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact__form" id="contactForm">
+                    <input type="text" id="formName" placeholder=" " required>
+                    <label for="formName" data-en="Your Name" data-fa="نام شما">نام شما</label>
+                    <input type="email" id="formEmail" placeholder=" " required>
+                    <label for="formEmail" data-en="Your Email" data-fa="ایمیل شما">ایمیل شما</label>
+                    <textarea id="formMessage" rows="4" placeholder=" " required></textarea>
+                    <label for="formMessage" data-en="Your Message" data-fa="پیام شما">پیام شما</label>
+                    <button type="submit" class="btn btn--primary" data-en="Send Message 📨" data-fa="ارسال پیام 📨">ارسال پیام 📨</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RULES / PRIVACY / FAQ ===== -->
+    <section class="info-pages section" id="rules" style="background: var(--gray-light);">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title" data-en="<span>Rules</span> & Regulations" data-fa="<span>قوانین</span> و مقررات"><span>قوانین</span> و مقررات</h2>
+            </div>
+            <div class="info-pages__content">
+                <p data-en="All terms and conditions of using MoboMind services are based on the laws of the Islamic Republic of Iran. By using this website, you accept all rules and regulations." data-fa="کلیه شرایط و ضوابط استفاده از خدمات MoboMind بر اساس قوانین جمهوری اسلامی ایران می‌باشد. با استفاده از این وبسایت، کلیه قوانین و مقررات را پذیرفته‌اید.">کلیه شرایط و ضوابط استفاده از خدمات MoboMind بر اساس قوانین جمهوری اسلامی ایران می‌باشد. با استفاده از این وبسایت، کلیه قوانین و مقررات را پذیرفته‌اید.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-pages section" id="privacy">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title" data-en="<span>Privacy</span> Policy" data-fa="<span>حریم</span> خصوصی"><span>حریم</span> خصوصی</h2>
+            </div>
+            <div class="info-pages__content">
+                <p data-en="Your personal information is completely confidential and will not be shared with any third party without your consent." data-fa="اطلاعات شخصی شما کاملاً محرمانه بوده و بدون رضایت شما در اختیار هیچ شخص ثالثی قرار نخواهد گرفت.">اطلاعات شخصی شما کاملاً محرمانه بوده و بدون رضایت شما در اختیار هیچ شخص ثالثی قرار نخواهد گرفت.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-pages section" id="faq" style="background: var(--gray-light);">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title" data-en="<span>Frequently</span> Asked Questions" data-fa="<span>سوالات</span> متداول"><span>سوالات</span> متداول</h2>
+            </div>
+            <div class="faq__list">
+                <div class="faq__item">
+                    <div class="faq__question">
+                        <span data-en="How can I place an order?" data-fa="چگونه می‌توانم سفارش ثبت کنم؟">چگونه می‌توانم سفارش ثبت کنم؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq__answer" data-en="Soon after adding products, you can place your order easily through the website. Stay tuned!" data-fa="به زودی پس از اضافه شدن محصولات، می‌توانید به راحتی از طریق وبسایت سفارش خود را ثبت کنید. همراه ما باشید!">به زودی پس از اضافه شدن محصولات، می‌توانید به راحتی از طریق وبسایت سفارش خود را ثبت کنید. همراه ما باشید!</div>
+                </div>
+                <div class="faq__item">
+                    <div class="faq__question">
+                        <span data-en="What are the payment methods?" data-fa="روش‌های پرداخت چیست؟">روش‌های پرداخت چیست؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq__answer" data-en="We support secure online payment and in-store payment methods." data-fa="ما از پرداخت آنلاین امن و پرداخت حضوری پشتیبانی می‌کنیم.">ما از پرداخت آنلاین امن و پرداخت حضوری پشتیبانی می‌کنیم.</div>
+                </div>
+                <div class="faq__item">
+                    <div class="faq__question">
+                        <span data-en="Do you offer product warranty?" data-fa="آیا گارانتی دارید؟">آیا گارانتی دارید؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq__answer" data-en="Yes, all products come with a genuine warranty and quality guarantee." data-fa="بله، تمامی محصولات دارای ضمانت اصالت و گارانتی کیفیت هستند.">بله، تمامی محصولات دارای ضمانت اصالت و گارانتی کیفیت هستند.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__col">
+                <div class="logo">
+                    <div class="logo__icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <span class="logo__text">Mobo<span class="logo__highlight">Mind</span></span>
+                </div>
+                <p class="footer__desc" data-en="Your specialized reference for Android & iPhone software and hardware" data-fa="مرجع تخصصی نرم‌افزار و سخت‌افزار سیستم‌عامل اندروید و آیفون">مرجع تخصصی نرم‌افزار و سخت
+                    <p class="footer__desc" data-en="Your specialized reference for Android & iPhone software and hardware" data-fa="مرجع تخصصی نرم‌افزار و سخت‌افزار سیستم‌عامل اندروید و آیفون">مرجع تخصصی نرم‌افزار و سخت‌افزار سیستم‌عامل اندروید و آیفون</p>
+                <div class="footer__social">
+                    <a href="https://www.instagram.com/mobomind?igsh=MWRwNjY5ZjFuOTlqdQ==" target="_blank" class="footer__social-link" style="background: linear-gradient(135deg, #f58529, #dd2a7b);">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="mailto:MoboMind@gmail.com" class="footer__social-link" style="background: var(--blue);">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer__col">
+                <h4 data-en="Quick Links" data-fa="دسترسی سریع">دسترسی سریع</h4>
+                <ul>
+                    <li><a href="#home" data-en="Home" data-fa="صفحه اصلی">صفحه اصلی</a></li>
+                    <li><a href="#about" data-en="About Us" data-fa="درباره ما">درباره ما</a></li>
+                    <li><a href="#contact" data-en="Contact Us" data-fa="تماس با ما">تماس با ما</a></li>
+                    <li><a href="#services" data-en="Services" data-fa="خدمات">خدمات</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4 data-en="Support" data-fa="پشتیبانی">پشتیبانی</h4>
+                <ul>
+                    <li><a href="#rules" data-en="Rules" data-fa="قوانین و مقررات">قوانین و مقررات</a></li>
+                    <li><a href="#privacy" data-en="Privacy" data-fa="حریم خصوصی">حریم خصوصی</a></li>
+                    <li><a href="#faq" data-en="FAQ" data-fa="سوالات متداول">سوالات متداول</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4 data-en="Working Hours" data-fa="ساعت کاری">ساعت کاری</h4>
+                <p data-en="Sat - Thu: 9 AM – 9 PM" data-fa="شنبه تا پنجشنبه: ۹ – ۲۱">شنبه تا پنجشنبه: ۹ – ۲۱</p>
+                <p class="footer__closed" data-en="Friday: Closed" data-fa="جمعه: تعطیل">جمعه: تعطیل</p>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p data-en="&copy; 2026 MoboMind. All rights reserved. | Designed with ❤️" data-fa="&copy; 2026 تمامی حقوق برای MoboMind محفوظ است. | طراحی شده با ❤️">&copy; 2026 تمامی حقوق برای MoboMind محفوظ است. | طراحی شده با ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== SCROLL TO TOP ===== -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
