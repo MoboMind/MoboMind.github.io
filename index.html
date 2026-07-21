@@ -1,318 +1,127 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MoboMind - مرجع تخصصی اندروید و آیفون</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta name="description" content="MoboMind - The Professional Center for Android & iPhone Software & Hardware">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <link rel="preload" href="assets/fonts/Vazirmatn.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="assets/fonts/PlusJakartaSans.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <title>MoboMind - Home</title>
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading">
+        <img src="assets/images/splash-logo.png" alt="MoboMind Logo">
+    </div>
 
-    <!-- ===== HEADER ===== -->
-    <header class="header">
-        <div class="container header__inner">
-            <div class="logo">
-                <div class="logo__icon">
-                    <i class="fas fa-microchip"></i>
-                </div>
-                <span class="logo__text">Mobo<span class="logo__highlight">Mind</span></span>
-            </div>
-
-            <nav class="nav" id="nav">
-                <ul class="nav__list">
-                    <li><a href="#home" class="nav__link active" data-en="Home" data-fa="صفحه اصلی">صفحه اصلی</a></li>
-                    <li><a href="#about" class="nav__link" data-en="About" data-fa="درباره ما">درباره ما</a></li>
-                    <li><a href="#contact" class="nav__link" data-en="Contact" data-fa="تماس با ما">تماس با ما</a></li>
-                    <li><a href="#rules" class="nav__link" data-en="Rules" data-fa="قوانین و مقررات">قوانین و مقررات</a></li>
-                    <li><a href="#privacy" class="nav__link" data-en="Privacy" data-fa="حریم خصوصی">حریم خصوصی</a></li>
-                    <li><a href="#faq" class="nav__link" data-en="FAQ" data-fa="سوالات متداول">سوالات متداول</a></li>
+    <!-- Header -->
+    <header class="sticky-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo-navbar.png" alt="MoboMind Logo">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </nav>
-
-            <div class="header__left">
-                <div class="lang-switch" id="langSwitch">
-                    <span class="lang-switch__option active" data-lang="fa">FA</span>
-                    <span class="lang-switch__divider">|</span>
-                    <span class="lang-switch__option" data-lang="en">EN</span>
-                </div>
-                <button class="hamburger" id="hamburger" aria-label="منو">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+            <div class="header-actions">
+                <form class="search-bar">
+                    <input type="text" placeholder="Search...">
+                </form>
+                <button id="lang-switch">فارسی</button>
+                <div id="dark-mode-toggle" class="dark-mode-toggle">🌙</div>
+                <button class="menu-toggle" aria-label="menu"><span></span></button>
             </div>
         </div>
     </header>
 
-    <!-- ===== HERO ===== -->
-    <section class="hero" id="home">
-        <div class="container hero__inner">
-            <div class="hero__content">
-                <span class="hero__badge" data-en="🚀 Your Tech Hub" data-fa="🚀 مرجع تخصصی شما">🚀 مرجع تخصصی شما</span>
-                <h1 class="hero__title" data-en="Welcome to <span>MoboMind</span>" data-fa="به <span>MoboMind</span> خوش آمدید">به <span>MoboMind</span> خوش آمدید</h1>
-                <p class="hero__subtitle" data-en="Your specialized reference for Android & iPhone software and hardware" data-fa="مرجع تخصصی نرم‌افزار و سخت‌افزار سیستم‌عامل اندروید و آیفون">مرجع تخصصی نرم‌افزار و سخت‌افزار سیستم‌عامل اندروید و آیفون</p>
-                <p class="hero__soon" data-en="Our products will be added soon. Stay tuned! 🎯" data-fa="به زودی محصولات ما اضافه خواهند شد. همراه ما باشید! 🎯">به زودی محصولات ما اضافه خواهند شد. همراه ما باشید! 🎯</p>
-                <div class="hero__buttons">
-                    <a href="#services" class="btn btn--primary" data-en="Our Services" data-fa="خدمات ما">خدمات ما</a>
-                    <a href="#contact" class="btn btn--outline" data-en="Contact Us" data-fa="تماس با ما">تماس با ما</a>
-                </div>
+    <!-- Hero Section -->
+    <main>
+        <section class="hero-section" id="home">
+            <div class="hero-content">
+                <h1>Welcome to MoboMind</h1>
+                <p>Products will be available soon.</p>
+                <a href="shop.html" class="cta-button">Explore Now</a>
             </div>
-            <div class="hero__image">
-                <div class="hero__shape"></div>
-                <div class="hero__phone">
-                    <i class="fas fa-mobile-screen-button"></i>
-                </div>
-            </div>
-        </div>
-    </section>
+            <div class="hero-animation"></div>
+        </section>
 
-    <!-- ===== SERVICES ===== -->
-    <section class="services section" id="services">
-        <div class="container">
-            <div class="section__header">
-                <span class="section__tag" data-en="✨ What We Offer" data-fa="✨ آنچه ارائه می‌دهیم">✨ آنچه ارائه می‌دهیم</span>
-                <h2 class="section__title" data-en="Our <span>Services</span>" data-fa="<span>خدمات</span> ما"><span>خدمات</span> ما</h2>
-            </div>
-            <div class="services__grid">
-                <div class="service-card">
-                    <div class="service-card__icon" style="background: rgba(46,204,113,0.15); color: var(--green);">
-                        <i class="fas fa-truck"></i>
-                    </div>
-                    <h3 class="service-card__title" data-en="Fast Delivery" data-fa="ارسال سریع">ارسال سریع</h3>
-                    <p class="service-card__desc" data-en="Receive your order in the shortest possible time" data-fa="سفارش خود را در کوتاه‌ترین زمان ممکن دریافت کنید">سفارش خود را در کوتاه‌ترین زمان ممکن دریافت کنید</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-card__icon" style="background: rgba(52,152,219,0.15); color: var(--blue);">
-                        <i class="fas fa-shield-halved"></i>
-                    </div>
-                    <h3 class="service-card__title" data-en="Genuine Warranty" data-fa="ضمانت اصالت کالا">ضمانت اصالت کالا</h3>
-                    <p class="service-card__desc" data-en="100% original products with warranty" data-fa="محصولات ۱۰۰٪ اورجینال با ضمانت">محصولات ۱۰۰٪ اورجینال با ضمانت</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-card__icon" style="background: rgba(241,196,15,0.15); color: var(--yellow);">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3 class="service-card__title" data-en="Online Support" data-fa="پشتیبانی آنلاین">پشتیبانی آنلاین</h3>
-                    <p class="service-card__desc" data-en="24/7 online support to answer your questions" data-fa="پشتیبانی آنلاین ۲۴ ساعته برای پاسخ به سوالات شما">پشتیبانی آنلاین ۲۴ ساعته برای پاسخ به سوالات شما</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-card__icon" style="background: rgba(46,204,113,0.15); color: var(--green);">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <h3 class="service-card__title" data-en="Secure Payment" data-fa="پرداخت امن">پرداخت امن</h3>
-                    <p class="service-card__desc" data-en="Secure online payment with encryption" data-fa="پرداخت آنلاین امن با رمزنگاری پیشرفته">پرداخت آنلاین امن با رمزنگاری پیشرفته</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-card__icon" style="background: rgba(52,152,219,0.15); color: var(--blue);">
-                        <i class="fas fa-store"></i>
-                    </div>
-                    <h3 class="service-card__title" data-en="In-Store Purchase" data-fa="امکان خرید حضوری">امکان خرید حضوری</h3>
-                    <p class="service-card__desc" data-en="Visit our store and shop in person" data-fa="از فروشگاه ما بازدید کنید و حضوری خرید کنید">از فروشگاه ما بازدید کنید و حضوری خرید کنید</p>
-                </div>
-                <div class="service-card service-card--highlight">
-                    <div class="service-card__icon" style="background: rgba(231,76,60,0.15); color: var(--orange);">
-                        <i class="fas fa-tags"></i>
-                    </div>
-                    <h3 class="service-card__title" data-en="Special Discounts" data-fa="تخفیف‌های ویژه">تخفیف‌های ویژه</h3>
-                    <p class="service-card__desc" data-en="Amazing discounts and offers for you" data-fa="تخفیف‌ها و پیشنهادهای شگفت‌انگیز برای شما">تخفیف‌ها و پیشنهادهای شگفت‌انگیز برای شما</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== ABOUT ===== -->
-    <section class="about section" id="about">
-        <div class="container">
-            <div class="about__inner">
-                <div class="about__image">
-                    <div class="about__shape"></div>
-                    <i class="fas fa-people-group about__icon"></i>
-                </div>
-                <div class="about__content">
-                    <span class="section__tag" data-en="💡 Who We Are" data-fa="💡 ما کیستیم">💡 ما کیستیم</span>
-                    <h2 class="section__title" data-en="About <span>MoboMind</span>" data-fa="درباره <span>MoboMind</span>">درباره <span>MoboMind</span></h2>
-                    <p class="about__text" data-en="MoboMind is your specialized reference in the world of Android and iPhone. We provide the latest software solutions, hardware components, and expert guidance to help you get the most out of your device." data-fa="MoboMind مرجع تخصصی شما در دنیای اندروید و آیفون است. ما جدیدترین راه‌حل‌های نرم‌افزاری، قطعات سخت‌افزاری و راهنمایی‌های تخصصی را برای استفاده بهینه از دستگاه شما ارائه می‌دهیم.">MoboMind مرجع تخصصی شما در دنیای اندروید و آیفون است. ما جدیدترین راه‌حل‌های نرم‌افزاری، قطعات سخت‌افزاری و راهنمایی‌های تخصصی را برای استفاده بهینه از دستگاه شما ارائه می‌دهیم.</p>
-                    <div class="about__stats">
-                        <div class="stat">
-                            <span class="stat__num">100+</span>
-                            <span class="stat__label" data-en="Products" data-fa="محصولات">محصولات</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat__num">500+</span>
-                            <span class="stat__label" data-en="Happy Customers" data-fa="مشتریان راضی">مشتریان راضی</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat__num">24/7</span>
-                            <span class="stat__label" data-en="Support" data-fa="پشتیبانی">پشتیبانی</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== WORKING HOURS ===== -->
-    <section class="hours section" style="background: var(--gray-light);">
-        <div class="container">
-            <div class="hours__card">
-                <i class="fas fa-clock hours__icon"></i>
-                <h3 data-en="Working Hours" data-fa="ساعت کاری">ساعت کاری</h3>
-                <p data-en="Saturday to Thursday: 9 AM – 9 PM" data-fa="شنبه تا پنجشنبه: ۹ صبح تا ۹ شب">شنبه تا پنجشنبه: ۹ صبح تا ۹ شب</p>
-                <p class="hours__closed" data-en="❌ Friday: Closed" data-fa="❌ جمعه: تعطیل">❌ جمعه: تعطیل</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== CONTACT ===== -->
-    <section class="contact section" id="contact">
-        <div class="container">
-            <div class="section__header">
-                <span class="section__tag" data-en="📬 Get In Touch" data-fa="📬 با ما در تماس باشید">📬 با ما در تماس باشید</span>
-                <h2 class="section__title" data-en="<span>Contact</span> Us" data-fa="<span>تماس</span> با ما"><span>تماس</span> با ما</h2>
-            </div>
-            <div class="contact__inner">
-                <div class="contact__info">
-                    <div class="contact__item">
-                        <i class="fas fa-envelope" style="color: var(--blue);"></i>
-                        <div>
-                            <strong data-en="Email" data-fa="ایمیل">ایمیل</strong>
-                            <a href="mailto:MoboMind@gmail.com">MoboMind@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact__item">
-                        <i class="fab fa-instagram" style="color: var(--orange);"></i>
-                        <div>
-                            <strong data-en="Instagram" data-fa="اینستاگرام">اینستاگرام</strong>
-                            <a href="https://www.instagram.com/mobomind?igsh=MWRwNjY5ZjFuOTlqdQ==" target="_blank">@mobomind</a>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact__form" id="contactForm">
-                    <input type="text" id="formName" placeholder=" " required>
-                    <label for="formName" data-en="Your Name" data-fa="نام شما">نام شما</label>
-                    <input type="email" id="formEmail" placeholder=" " required>
-                    <label for="formEmail" data-en="Your Email" data-fa="ایمیل شما">ایمیل شما</label>
-                    <textarea id="formMessage" rows="4" placeholder=" " required></textarea>
-                    <label for="formMessage" data-en="Your Message" data-fa="پیام شما">پیام شما</label>
-                    <button type="submit" class="btn btn--primary" data-en="Send Message 📨" data-fa="ارسال پیام 📨">ارسال پیام 📨</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== RULES / PRIVACY / FAQ ===== -->
-    <section class="info-pages section" id="rules" style="background: var(--gray-light);">
-        <div class="container">
-            <div class="section__header">
-                <h2 class="section__title" data-en="<span>Rules</span> & Regulations" data-fa="<span>قوانین</span> و مقررات"><span>قوانین</span> و مقررات</h2>
-            </div>
-            <div class="info-pages__content">
-                <p data-en="All terms and conditions of using MoboMind services are based on the laws of the Islamic Republic of Iran. By using this website, you accept all rules and regulations." data-fa="کلیه شرایط و ضوابط استفاده از خدمات MoboMind بر اساس قوانین جمهوری اسلامی ایران می‌باشد. با استفاده از این وبسایت، کلیه قوانین و مقررات را پذیرفته‌اید.">کلیه شرایط و ضوابط استفاده از خدمات MoboMind بر اساس قوانین جمهوری اسلامی ایران می‌باشد. با استفاده از این وبسایت، کلیه قوانین و مقررات را پذیرفته‌اید.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="info-pages section" id="privacy">
-        <div class="container">
-            <div class="section__header">
-                <h2 class="section__title" data-en="<span>Privacy</span> Policy" data-fa="<span>حریم</span> خصوصی"><span>حریم</span> خصوصی</h2>
-            </div>
-            <div class="info-pages__content">
-                <p data-en="Your personal information is completely confidential and will not be shared with any third party without your consent." data-fa="اطلاعات شخصی شما کاملاً محرمانه بوده و بدون رضایت شما در اختیار هیچ شخص ثالثی قرار نخواهد گرفت.">اطلاعات شخصی شما کاملاً محرمانه بوده و بدون رضایت شما در اختیار هیچ شخص ثالثی قرار نخواهد گرفت.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="info-pages section" id="faq" style="background: var(--gray-light);">
-        <div class="container">
-            <div class="section__header">
-                <h2 class="section__title" data-en="<span>Frequently</span> Asked Questions" data-fa="<span>سوالات</span> متداول"><span>سوالات</span> متداول</h2>
-            </div>
-            <div class="faq__list">
-                <div class="faq__item">
-                    <div class="faq__question">
-                        <span data-en="How can I place an order?" data-fa="چگونه می‌توانم سفارش ثبت کنم؟">چگونه می‌توانم سفارش ثبت کنم؟</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq__answer" data-en="Soon after adding products, you can place your order easily through the website. Stay tuned!" data-fa="به زودی پس از اضافه شدن محصولات، می‌توانید به راحتی از طریق وبسایت سفارش خود را ثبت کنید. همراه ما باشید!">به زودی پس از اضافه شدن محصولات، می‌توانید به راحتی از طریق وبسایت سفارش خود را ثبت کنید. همراه ما باشید!</div>
-                </div>
-                <div class="faq__item">
-                    <div class="faq__question">
-                        <span data-en="What are the payment methods?" data-fa="روش‌های پرداخت چیست؟">روش‌های پرداخت چیست؟</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq__answer" data-en="We support secure online payment and in-store payment methods." data-fa="ما از پرداخت آنلاین امن و پرداخت حضوری پشتیبانی می‌کنیم.">ما از پرداخت آنلاین امن و پرداخت حضوری پشتیبانی می‌کنیم.</div>
-                </div>
-                <div class="faq__item">
-                    <div class="faq__question">
-                        <span data-en="Do you offer product warranty?" data-fa="آیا گارانتی دارید؟">آیا گارانتی دارید؟</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq__answer" data-en="Yes, all products come with a genuine warranty and quality guarantee." data-fa="بله، تمامی محصولات دارای ضمانت اصالت و گارانتی کیفیت هستند.">بله، تمامی محصولات دارای ضمانت اصالت و گارانتی کیفیت هستند.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-        <div class="container footer__inner">
-            <div class="footer__col">
-                <div class="logo">
-                    <div class="logo__icon">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                    <span class="logo__text">Mobo<span class="logo__highlight">Mind</span></span>
-                </div>
-                <p class="footer__desc" data-en="Your specialized reference for Android & iPhone software and hardware" data-fa="مرجع تخصصی نرم‌افزار و سخت‌افزار سیستم‌عامل اندروید و آیفون">مرجع تخصصی نرم‌افزار و سخت
-                    <p class="footer__desc" data-en="Your specialized reference for Android & iPhone software and hardware" data-fa="مرجع تخصصی نرم‌افزار و سخت‌افزار سیستم‌عامل اندروید و آیفون">مرجع تخصصی نرم‌افزار و سخت‌افزار سیستم‌عامل اندروید و آیفون</p>
-                <div class="footer__social">
-                    <a href="https://www.instagram.com/mobomind?igsh=MWRwNjY5ZjFuOTlqdQ==" target="_blank" class="footer__social-link" style="background: linear-gradient(135deg, #f58529, #dd2a7b);">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="mailto:MoboMind@gmail.com" class="footer__social-link" style="background: var(--blue);">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="footer__col">
-                <h4 data-en="Quick Links" data-fa="دسترسی سریع">دسترسی سریع</h4>
-                <ul>
-                    <li><a href="#home" data-en="Home" data-fa="صفحه اصلی">صفحه اصلی</a></li>
-                    <li><a href="#about" data-en="About Us" data-fa="درباره ما">درباره ما</a></li>
-                    <li><a href="#contact" data-en="Contact Us" data-fa="تماس با ما">تماس با ما</a></li>
-                    <li><a href="#services" data-en="Services" data-fa="خدمات">خدمات</a></li>
-                </ul>
-            </div>
-            <div class="footer__col">
-                <h4 data-en="Support" data-fa="پشتیبانی">پشتیبانی</h4>
-                <ul>
-                    <li><a href="#rules" data-en="Rules" data-fa="قوانین و مقررات">قوانین و مقررات</a></li>
-                    <li><a href="#privacy" data-en="Privacy" data-fa="حریم خصوصی">حریم خصوصی</a></li>
-                    <li><a href="#faq" data-en="FAQ" data-fa="سوالات متداول">سوالات متداول</a></li>
-                </ul>
-            </div>
-            <div class="footer__col">
-                <h4 data-en="Working Hours" data-fa="ساعت کاری">ساعت کاری</h4>
-                <p data-en="Sat - Thu: 9 AM – 9 PM" data-fa="شنبه تا پنجشنبه: ۹ – ۲۱">شنبه تا پنجشنبه: ۹ – ۲۱</p>
-                <p class="footer__closed" data-en="Friday: Closed" data-fa="جمعه: تعطیل">جمعه: تعطیل</p>
-            </div>
-        </div>
-        <div class="footer__bottom">
+        <!-- Services Section -->
+        <section class="services-section">
             <div class="container">
-                <p data-en="&copy; 2026 MoboMind. All rights reserved. | Designed with ❤️" data-fa="&copy; 2026 تمامی حقوق برای MoboMind محفوظ است. | طراحی شده با ❤️">&copy; 2026 تمامی حقوق برای MoboMind محفوظ است. | طراحی شده با ❤️</p>
+                <h2>Our Services</h2>
+                <div class="service-cards">
+                    <div class="service-card">
+                        <img class="services-icon" src="assets/images/delivery.svg" alt="Fast Delivery">
+                        <h3>Fast Delivery</h3>
+                        <p>Quick and safe delivery services to your doorstep.</p>
+                    </div>
+                    <div class="service-card">
+                        <img class="services-icon" src="assets/images/original.svg" alt="Original Products">
+                        <h3>Original Products</h3>
+                        <p>Guaranteed authentic products.</p>
+                    </div>
+                    <!-- Add more service cards as needed -->
+                </div>
             </div>
-        </div>
-    </footer>
+        </section>
 
-    <!-- ===== SCROLL TO TOP ===== -->
-    <button class="scroll-top" id="scrollTop">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+        <!-- Placeholder Products Section -->
+        <section class="products-placeholder">
+            <div class="container">
+                <h2>Products are coming soon.</h2>
+                <div class="placeholder-cards">
+                    <div class="placeholder-card"></div>
+                    <!-- More placeholders -->
+                </div>
+            </div>
+        </section>
 
-    <script src="script.js"></script>
+        <!-- Blog Section -->
+        <section class="blog-preview">
+            <div class="container">
+                <h2>Latest News</h2>
+                <div class="blog-cards">
+                    <article class="blog-card">
+                        <h3>Exciting Updates</h3>
+                        <p>Stay tuned for the latest news from MoboMind.</p>
+                        <a href="blog.html">Read more</a>
+                    </article>
+                    <!-- Add more blog cards as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <img src="assets/images/logo-footer.png" alt="MoboMind Footer Logo">
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/mobomind">Instagram</a>
+                        <a href="mailto:MoboMind@gmail.com">Email Us</a>
+                    </div>
+                </div>
+                <nav class="footer-nav">
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </nav>
+                <p>© 2023 MoboMind. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/animations.js" defer></script>
 </body>
 </html>
