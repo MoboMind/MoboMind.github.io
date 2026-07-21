@@ -3,217 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>فروشگاه دیجی‌کالای من</title>
+<title>MoboMind | مرجع تخصصی نرم‌افزار و سخت‌افزار اندروید و آیفون</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --brand:#1a8f5a;
-    --brand-dark:#0f6b42;
-    --accent-orange:#e85d2a;
-    --bg:#f4f6f5;
-    --card:#ffffff;
-    --text:#1c2b24;
-    --text-soft:#6b7a73;
-    --line:#e5e9e7;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:'Vazirmatn',sans-serif; background:var(--bg); color:var(--text);}
-  a{text-decoration:none; color:inherit;}
-  img,.ph{display:block;}
-  .wrap{max-width:1100px; margin:0 auto; padding:0 16px;}
-
-  /* top bar */
-  .topbar{background:var(--brand-dark); color:#fff; font-size:12px; padding:6px 0;}
-  .topbar .wrap{display:flex; justify-content:space-between;}
-
-  header.main{background:#fff; border-bottom:1px solid var(--line); padding:14px 0;}
-  header.main .wrap{display:flex; align-items:center; gap:16px; flex-wrap:wrap;}
-  .logo{font-weight:700; font-size:20px; color:var(--brand);}
-  .search{flex:1; min-width:200px; display:flex; border:1px solid var(--line); border-radius:8px; overflow:hidden;}
-  .search input{flex:1; border:none; padding:10px 12px; font-family:inherit; font-size:14px;}
-  .search button{background:var(--brand); color:#fff; border:none; padding:0 18px; cursor:pointer;}
-  .cart{font-size:13px; color:var(--text-soft); white-space:nowrap;}
-
-  nav.catnav{background:var(--brand); overflow-x:auto;}
-  nav.catnav .wrap{display:flex; gap:22px; padding:10px 16px; white-space:nowrap;}
-  nav.catnav a{color:#fff; font-size:13px; opacity:.9;}
-  nav.catnav a.active{opacity:1; border-bottom:2px solid #fff; padding-bottom:4px;}
-
-  /* hero */
-  .hero{background:linear-gradient(135deg,#e6f4ec,#cdeada); border-radius:14px; margin:20px 16px; padding:36px 24px; display:flex; align-items:center; justify-content:space-between; gap:20px;}
-  .hero h1{font-size:clamp(20px,3.5vw,30px); color:var(--brand-dark); line-height:1.5;}
-  .hero .ph-hero{width:140px; height:140px; background:var(--brand); border-radius:50%; opacity:.15; flex-shrink:0;}
-  .hero .btn{display:inline-block; margin-top:14px; background:var(--brand); color:#fff; padding:8px 20px; border-radius:8px; font-size:13px;}
-
-  .section-title{font-size:15px; font-weight:600; margin:26px 16px 12px; color:var(--text-soft);}
-
-  /* category icons */
-  .cat-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:0 16px;}
-  @media(min-width:640px){.cat-grid{grid-template-columns:repeat(6,1fr);}}
-  .cat-item{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px 8px; text-align:center;}
-  .cat-item .ic{width:36px; height:36px; margin:0 auto 8px; border-radius:8px; background:#eaf6f0;}
-  .cat-item span{font-size:12px; color:var(--text-soft);}
-
-  /* discount block */
-  .discount{background:linear-gradient(135deg,var(--accent-orange),#d9481e); border-radius:14px; margin:20px 16px; padding:18px; color:#fff;}
-  .discount-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; font-size:14px;}
-  #countdown{font-family:monospace; font-size:15px; background:rgba(255,255,255,.15); padding:4px 10px; border-radius:6px;}
-  .product-row{display:grid; grid-template-columns:repeat(2,1fr); gap:10px;}
-  @media(min-width:640px){.product-row{grid-template-columns:repeat(4,1fr);}}
-  .product-card{background:#fff; border-radius:10px; padding:12px; color:var(--text);}
-  .product-card .img{width:100%; height:90px; border-radius:8px; background:#f0f0f0; margin-bottom:8px;}
-  .product-card .name{font-size:12px; color:var(--text-soft); height:32px; overflow:hidden;}
-  .product-card .price{font-size:13px; font-weight:600; margin-top:6px;}
-
-  /* products grid */
-  .grid-products{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:0 16px;}
-  @media(min-width:640px){.grid-products{grid-template-columns:repeat(5,1fr);}}
-  .grid-products .product-card{border:1px solid var(--line);}
-
-  /* promo banners */
-  .promo-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:20px 16px;}
-  .promo{border-radius:12px; padding:22px; color:#fff; font-size:14px; font-weight:600; min-height:100px; display:flex; flex-direction:column; justify-content:space-between;}
-  .promo.p1{background:linear-gradient(135deg,#6a4fd6,#8b6ff0);}
-  .promo.p2{background:linear-gradient(135deg,#0f9b6c,#0c7b56);}
-  .promo.p3{background:linear-gradient(135deg,#c9903f,#b7742b);}
-  .promo.p4{background:linear-gradient(135deg,#e3667e,#d8455f);}
-  .promo small{font-weight:400; opacity:.85; font-size:12px;}
-
-  /* blog */
-  .blog-grid{display:grid; grid-template-columns:1fr; gap:14px; margin:0 16px;}
-  @media(min-width:640px){.blog-grid{grid-template-columns:repeat(3,1fr);}}
-  .blog-card{background:#fff; border-radius:10px; overflow:hidden; border:1px solid var(--line);}
-  .blog-card .img{height:120px; background:#e8ecea;}
-  .blog-card .body{padding:12px;}
-  .blog-card .body p{font-size:13px; line-height:1.6;}
-  .blog-card .body span{font-size:11px; color:var(--text-soft);}
-
-  footer{background:#fff; border-top:1px solid var(--line); margin-top:30px; padding:30px 16px; font-size:13px; color:var(--text-soft);}
-  .foot-grid{display:grid; grid-template-columns:1fr; gap:20px; max-width:1100px; margin:0 auto;}
-  @media(min-width:640px){.foot-grid{grid-template-columns:repeat(4,1fr);}}
-  .foot-col h4{color:var(--text); font-size:14px; margin-bottom:10px;}
-  .foot-col p{margin-bottom:6px;}
-  .copyright{text-align:center; margin-top:24px; padding-top:16px; border-top:1px solid var(--line); font-size:12px;}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="topbar"><div class="wrap"><span>ارسال رایگان بالای ۵۰۰ هزار تومان</span><span>پشتیبانی: ۰۲۱-۰۰۰۰۰۰۰</span></div></div>
-
-<header class="main">
+<header class="site">
   <div class="wrap">
-    <div class="logo">فروشگاه من</div>
-    <div class="search">
-      <input type="text" placeholder="جستجو در محصولات...">
-      <button>جستجو</button>
+    <div class="brand">
+      <img src="assets/logo.png" alt="لوگوی MoboMind">
+      <div class="name">MoboMind<span class="tag">مرجع تخصصی نرم‌افزار و سخت‌افزار اندروید و آیفون</span></div>
     </div>
-    <div class="cart">ورود / ثبت‌نام &nbsp; | &nbsp; سبد خرید (۰)</div>
+    <nav class="mainnav">
+      <a href="index.html" class="active">صفحه اصلی</a>
+      <a href="about.html">درباره ما</a>
+      <a href="contact.html">تماس با ما</a>
+      <a href="faq.html">سوالات متداول</a>
+      <a href="terms.html">قوانین و مقررات</a>
+      <a href="privacy.html">حریم خصوصی</a>
+    </nav>
   </div>
 </header>
 
-<nav class="catnav">
-  <div class="wrap">
-    <a href="#" class="active">خانه</a>
-    <a href="#">موبایل و تبلت</a>
-    <a href="#">لوازم جانبی</a>
-    <a href="#">پوشاک</a>
-    <a href="#">لوازم خانگی</a>
-    <a href="#">زیبایی و سلامت</a>
-    <a href="#">محصولات تخفیف‌دار</a>
-  </div>
-</nav>
-
 <div class="hero">
-  <div>
-    <h1>مجموعه محصولات منتخب<br>با بهترین قیمت بازار</h1>
-    <a href="#discount" class="btn">مشاهده و خرید</a>
-  </div>
-  <div class="ph-hero"></div>
+  <h1>به فروشگاه MoboMind خوش آمدید</h1>
+  <p>مرجع تخصصی نرم‌افزار و سخت‌افزار سیستم عامل اندروید و آیفون</p>
+  <span class="soon">به‌زودی محصولات ما اضافه خواهند شد</span>
 </div>
 
-<div class="section-title">دسته‌بندی‌های پرطرفدار</div>
-<div class="cat-grid">
-  <div class="cat-item"><div class="ic"></div><span>شارژر و کابل</span></div>
-  <div class="cat-item"><div class="ic"></div><span>پاوربانک</span></div>
-  <div class="cat-item"><div class="ic"></div><span>قاب و گارد</span></div>
-  <div class="cat-item"><div class="ic"></div><span>هدفون و اسپیکر</span></div>
-  <div class="cat-item"><div class="ic"></div><span>ساعت هوشمند</span></div>
-  <div class="cat-item"><div class="ic"></div><span>کیف و کوله</span></div>
-</div>
-
-<div class="discount" id="discount">
-  <div class="discount-head">
-    <span>تا پایان تخفیف ویژه</span>
-    <span id="countdown">۲۳:۵۹:۵۹</span>
-  </div>
-  <div class="product-row">
-    <div class="product-card"><div class="img"></div><div class="name">محصول تخفیف‌دار شماره ۱</div><div class="price">۱۸۹,۰۰۰ تومان</div></div>
-    <div class="product-card"><div class="img"></div><div class="name">محصول تخفیف‌دار شماره ۲</div><div class="price">۶۵,۰۰۰ تومان</div></div>
-    <div class="product-card"><div class="img"></div><div class="name">محصول تخفیف‌دار شماره ۳</div><div class="price">۱۷۷,۰۰۰ تومان</div></div>
-    <div class="product-card"><div class="img"></div><div class="name">محصول تخفیف‌دار شماره ۴</div><div class="price">۷۸,۵۰۰ تومان</div></div>
-  </div>
-</div>
-
-<div class="section-title">جدیدترین محصولات فروشگاه</div>
-<div class="grid-products">
-  <div class="product-card"><div class="img"></div><div class="name">پایه نگهدارنده گوشی</div><div class="price">۱۳۵,۰۰۰ تومان</div></div>
-  <div class="product-card"><div class="img"></div><div class="name">کاور طرح‌دار</div><div class="price">۱۵۳,۰۰۰ تومان</div></div>
-  <div class="product-card"><div class="img"></div><div class="name">کارت حافظه ۱۲۸ گیگ</div><div class="price">۲۴۳,۰۰۰ تومان</div></div>
-  <div class="product-card"><div class="img"></div><div class="name">کابل شارژ سریع</div><div class="price">۷۹,۵۰۰ تومان</div></div>
-  <div class="product-card"><div class="img"></div><div class="name">شارژر دیواری اورجینال</div><div class="price">۲۵۵,۰۰۰ تومان</div></div>
-</div>
-
-<div class="promo-grid">
-  <div class="promo p1"><span>انواع باتری موبایل<br><small>همین حالا خرید کنید</small></span></div>
-  <div class="promo p2"><span>انواع پاوربانک<br><small>همین حالا خرید کنید</small></span></div>
-  <div class="promo p3"><span>شارژرهای اصل<br><small>ارسال سریع</small></span></div>
-  <div class="promo p4"><span>ساعت‌های هوشمند<br><small>قیمت ویژه</small></span></div>
-</div>
-
-<div class="section-title">آخرین نوشته‌های وبلاگ</div>
-<div class="blog-grid">
-  <div class="blog-card"><div class="img"></div><div class="body"><p>بهترین رنگ اتاق برای آرامش بیشتر</p><span>۳ دقیقه مطالعه</span></div></div>
-  <div class="blog-card"><div class="img"></div><div class="body"><p>راهنمای خرید کارت حافظه مناسب گوشی</p><span>۵ دقیقه مطالعه</span></div></div>
-  <div class="blog-card"><div class="img"></div><div class="body"><p>مقایسه انواع پاوربانک‌های بازار</p><span>۴ دقیقه مطالعه</span></div></div>
+<div class="section-title">خدمات ما</div>
+<div class="services">
+  <div class="service"><div class="dot" style="background:var(--green)"></div><span>ارسال سریع</span></div>
+  <div class="service"><div class="dot" style="background:var(--blue)"></div><span>ضمانت اصالت کالا</span></div>
+  <div class="service"><div class="dot" style="background:var(--yellow)"></div><span>پشتیبانی آنلاین</span></div>
+  <div class="service"><div class="dot" style="background:var(--orange)"></div><span>پرداخت امن</span></div>
+  <div class="service"><div class="dot" style="background:var(--gray)"></div><span>امکان خرید حضوری</span></div>
 </div>
 
 <footer>
   <div class="foot-grid">
     <div class="foot-col">
-      <h4>درباره فروشگاه</h4>
-      <p>ما با هدف ارائه محصولات باکیفیت و قیمت مناسب فعالیت می‌کنیم.</p>
+      <h4>MoboMind</h4>
+      <p>مرجع تخصصی نرم‌افزار و سخت‌افزار سیستم عامل اندروید و آیفون</p>
     </div>
     <div class="foot-col">
       <h4>دسترسی سریع</h4>
-      <p>صفحه اصلی</p><p>محصولات</p><p>وبلاگ</p>
+      <a href="about.html">درباره ما</a>
+      <a href="contact.html">تماس با ما</a>
+      <a href="faq.html">سوالات متداول</a>
+      <a href="terms.html">قوانین و مقررات</a>
+      <a href="privacy.html">حریم خصوصی</a>
     </div>
     <div class="foot-col">
-      <h4>تماس با ما</h4>
-      <p>تلفن: ۰۲۱-۰۰۰۰۰۰۰</p><p>ایمیل: info@example.com</p>
-    </div>
-    <div class="foot-col">
-      <h4>پشتیبانی</h4>
-      <p>راهنمای خرید</p><p>سوالات متداول</p><p>حریم خصوصی</p>
+      <h4>ارتباط با ما</h4>
+      <a href="mailto:MoboMind@gmail.com">MoboMind@gmail.com</a>
+      <a href="https://www.instagram.com/mobomind" target="_blank">اینستاگرام MoboMind</a>
+      <p>ساعت کاری: شنبه تا پنجشنبه، ۹ الی ۲۱ — جمعه‌ها تعطیل</p>
     </div>
   </div>
-  <div class="copyright">تمامی حقوق این سایت برای فروشگاه من محفوظ است.</div>
+  <div class="copyright">تمامی حقوق این سایت برای MoboMind محفوظ است.</div>
 </footer>
-
-<script>
-  // simple countdown demo, resets each visit for placeholder effect
-  let seconds = 23*3600 + 59*60 + 59;
-  const el = document.getElementById('countdown');
-  function toFa(n){ return n.toString().padStart(2,'0').replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]); }
-  setInterval(()=>{
-    if(seconds <= 0) return;
-    seconds--;
-    const h = Math.floor(seconds/3600);
-    const m = Math.floor((seconds%3600)/60);
-    const s = seconds%60;
-    el.textContent = `${toFa(h)}:${toFa(m)}:${toFa(s)}`;
-  }, 1000);
-</script>
 
 </body>
 </html>
